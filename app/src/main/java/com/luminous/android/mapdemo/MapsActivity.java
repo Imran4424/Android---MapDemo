@@ -38,6 +38,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
         // Add a marker in Sydney and move the camera
         LatLng rangpurZillaSchool = new LatLng(25.7574106,89.2406631);
