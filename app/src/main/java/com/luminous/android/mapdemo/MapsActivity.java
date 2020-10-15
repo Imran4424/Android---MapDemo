@@ -105,6 +105,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         if (listAddress.get(0).getAdminArea() != null) {
                             address += listAddress.get(0).getAdminArea();
                         }
+
+                        Toast.makeText(MapsActivity.this, address, Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
