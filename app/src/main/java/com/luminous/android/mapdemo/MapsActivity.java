@@ -70,7 +70,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(@NonNull Location location) {
-                Toast.makeText(MapsActivity.this, location.toString(), Toast.LENGTH_SHORT).show();
+                // Add a marker in Sydney and move the camera
+                LatLng rangpurZillaSchool = new LatLng(25.7574106,89.2406631);
+                mMap.addMarker(new MarkerOptions().position(rangpurZillaSchool).title("Best school, Ancient one").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(rangpurZillaSchool, 10));
             }
         };
 
@@ -83,10 +86,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
             }
         }
-
-        // Add a marker in Sydney and move the camera
-        LatLng rangpurZillaSchool = new LatLng(25.7574106,89.2406631);
-        mMap.addMarker(new MarkerOptions().position(rangpurZillaSchool).title("Best school, Ancient one").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(rangpurZillaSchool, 10));
     }
 }
